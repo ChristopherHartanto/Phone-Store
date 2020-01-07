@@ -9,14 +9,6 @@ import Modal from './components/Modal';
 import ProductList from './components/ProductList';
 import {Switch, Route} from 'react-router-dom';
 
-// function App() {
-//   return (
-    
-//   );
-// }
-
-// export default App;
-
 export default class App extends React.Component{
   render(){
     return(
