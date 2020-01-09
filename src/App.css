@@ -1,25 +1,24 @@
 :root{
-  --mainBlue:#2a2a72;
-  --lightBlue:#009ffd;
+  --mainDark:#000000;
+  --lightDark:#1d1d1d;
   --mainWhite:#f3f3f3;
-  --mainDark:#232528;
   --mainYellow:#ffa400;
 }
 
 body{
   font-family: "Oswald", sans-serif !important;
-  background: var(--mainWhite) !important;
+  background: var(--lightDark) !important;
   color: var(--mainDark) !important;
 }
 
 .text-title{
-  font-family: 'Permanent Marker', cursive;
+  font-family: 'Permanent Marker';
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
 
-.text-blue{
-  color: var(--mainBlue);
+.text-white{
+  color: var(--mainWhite);
 }
 
 .btn-black{

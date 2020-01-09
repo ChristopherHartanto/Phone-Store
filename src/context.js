@@ -10,7 +10,7 @@ class ProductProvider extends Component {
         products: [],
         detailProducts: detailProduct,
         carts: [],
-        modalOpen: false,
+        modalOpen:false,
         modalProduct: detailProduct,
         cartSubTotal: 0,
         cartTax: 0,
@@ -66,6 +66,13 @@ class ProductProvider extends Component {
     didLogin = () =>{
         this.setState(()=>{
             return{login:true}
+        })
+    }
+
+    logOut = () =>{
+        this.clearCart()  
+        this.setState(()=>{
+            return{login:false}
         })
     }
 
@@ -201,7 +208,8 @@ class ProductProvider extends Component {
                 decrement: this.decrement,
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
-                didLogin: this.didLogin
+                didLogin: this.didLogin,
+                logOut: this.logOut
             }}>
                 {this.props.children}
             </ProductContext.Provider>
