@@ -9,7 +9,7 @@ export default class Modal extends Component {
         return (
             <ProductConsumer>
                 {value =>{
-                    const {modalOpen, closeModal, login} = value
+                    const {clearCart,modalOpen, closeModal, login, success} = value
                     const {img,title,price} = value.modalProduct
 
                     console.log(`login: `,login)
@@ -42,7 +42,31 @@ export default class Modal extends Component {
                             </ModalContainer>
                         )
                     }
-                    
+                    else if(login && success){
+                        return(
+                            <ModalContainer>
+                                <div className="container">
+                                    <div className="row">
+                                        <div id="modal" className="col-8 mx-auto col-md-6 col-lg-4 text-center text-capitalize p-5">
+                                            <h3>Thank You For Shopping</h3>
+                                            <Link to="/">
+                                                <ButtonContainer onClick = {() => 
+                                                    {
+                                                        clearCart()
+                                                        closeModal()
+                                                    }
+                                                }>
+                                                    Ok
+                                                </ButtonContainer>
+                                            </Link>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </ModalContainer>
+                        )
+                    }
                     else{
                         return(
                             <ModalContainer>

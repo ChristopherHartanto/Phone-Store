@@ -15,7 +15,8 @@ class ProductProvider extends Component {
         cartSubTotal: 0,
         cartTax: 0,
         cartTotal: 0,
-        login: false
+        login: false,
+        success: false
     }
 
     componentDidMount(){
@@ -169,7 +170,8 @@ class ProductProvider extends Component {
         this.setState(
             ()=>{
                 return{
-                    carts:[]
+                    carts:[],
+                    success:false
                 }
             },
             ()=>{
@@ -177,6 +179,12 @@ class ProductProvider extends Component {
                 this.addTotals()
             }
         )
+    }
+
+    buy = () =>{
+        this.setState(()=>{
+            return{success:true}
+        })
     }
 
     addTotals = () =>{
@@ -209,7 +217,8 @@ class ProductProvider extends Component {
                 removeItem: this.removeItem,
                 clearCart: this.clearCart,
                 didLogin: this.didLogin,
-                logOut: this.logOut
+                logOut: this.logOut,
+                buy: this.buy
             }}>
                 {this.props.children}
             </ProductContext.Provider>
